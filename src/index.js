@@ -2,9 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const api = require('../mongoUri');
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/authRoutes');
+
+app.use(bodyParser.json());
+app.use(authRoutes);
+
 mongoose.connect(api.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 mongoose.connection.on('connected', () => {
