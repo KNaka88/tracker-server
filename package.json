@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "tunnel": "ngrok http 3000"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +16,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.27",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "ngrok": "^3.2.7"
   }
 }
